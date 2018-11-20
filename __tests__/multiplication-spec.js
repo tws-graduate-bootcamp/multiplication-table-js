@@ -80,4 +80,22 @@ describe ('create table', () => {
       
     expect(table).toBe(expected);
   });
+
+  it ('should be aligned properly if the expression width changes', () => {
+      // Given
+    const start = 2;
+    const end = 5;
+    
+    // When
+    const table = multiplication.createTable(start, end);
+
+    // Then
+    const expected = 
+      "2*2=4   \n" +
+      "2*3=6   3*3=9   \n" +
+      "2*4=8   3*4=12  4*4=16  \n" +
+      "2*5=10  3*5=15  4*5=20  5*5=25  \n";
+      
+    expect(table).toBe(expected);
+  });
 });
