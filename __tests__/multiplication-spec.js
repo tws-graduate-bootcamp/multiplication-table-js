@@ -33,3 +33,18 @@ describe ('create expression string', () => {
     expect(expression).toBe('3*4=12   ');
   });
 });
+
+describe ('create table', () => {
+  it ('should create table for only one expression', () => {
+    // Given
+    const start = 4;
+    const end = 4;
+    
+    // When
+    const table = multiplication.createTable(start, end);
+
+    // Then
+    const expected = "4*4=16  \n"
+    expect(table).toBe(expected);
+  });
+});
