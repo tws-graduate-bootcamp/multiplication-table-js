@@ -102,24 +102,24 @@ describe ('create table', () => {
 
 describe ('validate range', () => {
   it ('should return true if start is smaller than or equal with end', () => {
-    expect(multiplication.validateRange(1, 5)).toBeTruthy();
-    expect(multiplication.validateRange(1000, 1000)).toBeTruthy();
+    expect(multiplication.isValidRange(1, 5)).toBeTruthy();
+    expect(multiplication.isValidRange(1000, 1000)).toBeTruthy();
   });
 
   it ('should return false if start is greater than end', () => {
-    expect(multiplication.validateRange(2, 1)).toBeFalsy();
-    expect(multiplication.validateRange(1000, 999)).toBeFalsy();
+    expect(multiplication.isValidRange(2, 1)).toBeFalsy();
+    expect(multiplication.isValidRange(1000, 999)).toBeFalsy();
   });
 
   it ('should return false if start or end is out of range', () => {
     // Given end out of range
-    expect(multiplication.validateRange(2, 1001)).toBeFalsy();
-    expect(multiplication.validateRange(1000, 1001)).toBeFalsy();
-    expect(multiplication.validateRange(-2, -1)).toBeFalsy();
+    expect(multiplication.isValidRange(2, 1001)).toBeFalsy();
+    expect(multiplication.isValidRange(1000, 1001)).toBeFalsy();
+    expect(multiplication.isValidRange(-2, -1)).toBeFalsy();
 
     // Given start out of range
-    expect(multiplication.validateRange(1001, 1002)).toBeFalsy();
-    expect(multiplication.validateRange(0, 200)).toBeFalsy();
-    expect(multiplication.validateRange(-1, 200)).toBeFalsy();
+    expect(multiplication.isValidRange(1001, 1002)).toBeFalsy();
+    expect(multiplication.isValidRange(0, 200)).toBeFalsy();
+    expect(multiplication.isValidRange(-1, 200)).toBeFalsy();
   });
 });

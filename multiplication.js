@@ -6,7 +6,7 @@ function createExpressionString(column, row, width) {
   return `${column}*${row}=${column * row}`.padEnd(width);
 }
 
-function validateRange(start, end) {
+function isValidRange(start, end) {
   return start >= 1 && start <= 1000 && end >= 1 && end <= 1000 && start <= end;
 }
 
@@ -29,5 +29,5 @@ module.exports = {
   calculateColumnWidth,
   createExpressionString,
   createTable,
-  validateRange
+  isValidRange
 }
