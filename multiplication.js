@@ -6,6 +6,10 @@ function createExpressionString(column, row, width) {
   return `${column}*${row}=${column * row}`.padEnd(width);
 }
 
+function validateRange(start, end) {
+  return start <= end;
+}
+
 function createTable(start, end) {
   let table = "";
 
@@ -24,5 +28,6 @@ function createTable(start, end) {
 module.exports = {
   calculateColumnWidth,
   createExpressionString,
-  createTable
+  createTable,
+  validateRange
 }

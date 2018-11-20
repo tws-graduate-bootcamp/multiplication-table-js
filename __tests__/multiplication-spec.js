@@ -99,3 +99,10 @@ describe ('create table', () => {
     expect(table).toBe(expected);
   });
 });
+
+describe ('validate range', () => {
+  it ('should return true if start is smaller than or equal with end', () => {
+    expect(multiplication.validateRange(1, 5)).toBeTruthy();
+    expect(multiplication.validateRange(1000, 1000)).toBeTruthy();
+  });
+});
