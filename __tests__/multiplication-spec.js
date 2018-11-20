@@ -62,4 +62,22 @@ describe ('create table', () => {
       "4*5=20  5*5=25  \n"
     expect(table).toBe(expected);
   });
+
+  it ('should create table for multiple rows', () => {
+    // Given
+    const start = 3;
+    const end = 6;
+    
+    // When
+    const table = multiplication.createTable(start, end);
+
+    // Then
+    const expected = 
+      "3*3=9   \n" +
+      "3*4=12  4*4=16  \n" +
+      "3*5=15  4*5=20  5*5=25  \n" +
+      "3*6=18  4*6=24  5*6=30  6*6=36  \n";
+      
+    expect(table).toBe(expected);
+  });
 });
