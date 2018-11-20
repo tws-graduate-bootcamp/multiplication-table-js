@@ -18,3 +18,18 @@ describe ('calculate column width', () => {
   // method is called internally. Its inputs are carefully passed by us rather
   // than by user.
 });
+
+describe ('create expression string', () => {
+  it ('should create string of multiply expression for given width', () => {
+    // Given
+    const column = 3;
+    const row = 4;
+    const width = 9;
+
+    // When
+    const expression = multiplication.createExpressionString(column, row, width);
+
+    // Then
+    expect(expression).toBe('3*4=12   ');
+  });
+});
