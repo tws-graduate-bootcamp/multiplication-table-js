@@ -105,4 +105,9 @@ describe ('validate range', () => {
     expect(multiplication.validateRange(1, 5)).toBeTruthy();
     expect(multiplication.validateRange(1000, 1000)).toBeTruthy();
   });
+
+  it ('should return false if start is greater than end', () => {
+    expect(multiplication.validateRange(2, 1)).toBeFalsy();
+    expect(multiplication.validateRange(1000, 999)).toBeFalsy();
+  });
 });
