@@ -25,9 +25,14 @@ function createTable(start, end) {
   return table;
 }
 
+function createMultiplicationTable(start, end) {
+  return createTable(start, end);
+}
+
 module.exports = {
   calculateColumnWidth,
   createExpressionString,
   createTable,
-  isValidRange
+  isValidRange,
+  createMultiplicationTable
 }

@@ -82,7 +82,7 @@ describe ('create table', () => {
   });
 
   it ('should be aligned properly if the expression width changes', () => {
-      // Given
+    // Given
     const start = 2;
     const end = 5;
     
@@ -121,5 +121,25 @@ describe ('validate range', () => {
     expect(multiplication.isValidRange(1001, 1002)).toBeFalsy();
     expect(multiplication.isValidRange(0, 200)).toBeFalsy();
     expect(multiplication.isValidRange(-1, 200)).toBeFalsy();
+  });
+});
+
+describe ('create multiplication table', () => {
+  it ('should get multiplication table', () => {
+    // Given
+    const start = 2;
+    const end = 5;
+    
+    // When
+    const table = multiplication.createMultiplicationTable(start, end);
+
+    // Then
+    const expected = 
+      "2*2=4   \n" +
+      "2*3=6   3*3=9   \n" +
+      "2*4=8   3*4=12  4*4=16  \n" +
+      "2*5=10  3*5=15  4*5=20  5*5=25  \n";
+      
+    expect(table).toBe(expected);
   });
 });
