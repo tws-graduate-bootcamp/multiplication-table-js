@@ -47,4 +47,19 @@ describe ('create table', () => {
     const expected = "4*4=16  \n"
     expect(table).toBe(expected);
   });
+
+  it ('should create table for 2 rows', () => {
+    // Given
+    const start = 4;
+    const end = 5;
+    
+    // When
+    const table = multiplication.createTable(start, end);
+
+    // Then
+    const expected = 
+      "4*4=16  \n" +
+      "4*5=20  5*5=25  \n"
+    expect(table).toBe(expected);
+  });
 });

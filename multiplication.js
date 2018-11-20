@@ -7,7 +7,18 @@ function createExpressionString(column, row, width) {
 }
 
 function createTable(start, end) {
-  return createExpressionString(start, end, calculateColumnWidth(start, end)) + '\n';
+  let table = "";
+
+  for (let row = start; row <= end; ++row) {
+    for (let column = start; column <= row; ++column) {
+      const width = calculateColumnWidth(column, end);
+      const expression = createExpressionString(column, row, width);
+      table += expression;
+    }
+    table += '\n';
+  }
+
+  return table;
 }
 
 module.exports = {
