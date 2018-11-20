@@ -26,6 +26,7 @@ function createTable(start, end) {
 }
 
 function createMultiplicationTable(start, end) {
+  if (!isValidRange(start, end)) return null;
   return createTable(start, end);
 }
 

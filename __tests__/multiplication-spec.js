@@ -142,4 +142,28 @@ describe ('create multiplication table', () => {
       
     expect(table).toBe(expected);
   });
+
+  it ('should get null if start is greater than end', () => {
+    // Given
+    const start = 5;
+    const end = 4;
+
+    // When
+    const table = multiplication.createMultiplicationTable(start, end);
+
+    // Then
+    expect(table).toBeNull();
+  });
+
+  it ('should get null if start or end is out of range', () => {
+    // Given
+    const start = 200;
+    const end = 1001;
+
+    // When
+    const table = multiplication.createMultiplicationTable(start, end);
+
+    // Then
+    expect(table).toBeNull();
+  })
 });
