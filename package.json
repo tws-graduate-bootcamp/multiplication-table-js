@@ -1,0 +1,11 @@
+{
+  "name": "multiplication",
+  "version": "1.0.0",
+  "description": "A sample answer for creating multiplication table.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Liu Xia",
+  "license": "GPL-3.0-or-later"
+}
