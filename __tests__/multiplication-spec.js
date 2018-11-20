@@ -110,4 +110,16 @@ describe ('validate range', () => {
     expect(multiplication.validateRange(2, 1)).toBeFalsy();
     expect(multiplication.validateRange(1000, 999)).toBeFalsy();
   });
+
+  it ('should return false if start or end is out of range', () => {
+    // Given end out of range
+    expect(multiplication.validateRange(2, 1001)).toBeFalsy();
+    expect(multiplication.validateRange(1000, 1001)).toBeFalsy();
+    expect(multiplication.validateRange(-2, -1)).toBeFalsy();
+
+    // Given start out of range
+    expect(multiplication.validateRange(1001, 1002)).toBeFalsy();
+    expect(multiplication.validateRange(0, 200)).toBeFalsy();
+    expect(multiplication.validateRange(-1, 200)).toBeFalsy();
+  });
 });

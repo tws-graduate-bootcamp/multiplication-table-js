@@ -7,7 +7,7 @@ function createExpressionString(column, row, width) {
 }
 
 function validateRange(start, end) {
-  return start <= end;
+  return start >= 1 && start <= 1000 && end >= 1 && end <= 1000 && start <= end;
 }
 
 function createTable(start, end) {
